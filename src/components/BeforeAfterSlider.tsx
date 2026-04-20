@@ -71,7 +71,7 @@ export function BeforeAfterSlider({
     <div className="relative isolate">
       <div
         ref={containerRef}
-        className="relative w-full h-[60vh] md:h-[70vh] rounded-2xl overflow-hidden select-none cursor-ew-resize mt-8 shadow-2xl ring-1 ring-slate-900/10"
+        className="relative w-full aspect-[16/10] max-h-[700px] rounded-2xl overflow-hidden select-none cursor-ew-resize mt-8 shadow-2xl ring-1 ring-slate-900/10"
         onMouseDown={(e) => {
           setIsDragging(true);
           handleMove(e.clientX);
