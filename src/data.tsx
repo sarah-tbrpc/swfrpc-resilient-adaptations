@@ -7,39 +7,38 @@ export const locationsData = [
     title: 'St. Armands Circle Adaptation',
     tabLabel: 'St. Armands Circle',
     location: 'Sarasota County',
-    description: 'Illustrating a transition from a flood-exposed commercial district to a green-first, adaptive coastal environment.',
+    description: 'Illustrates how a flood-prone commercial district could be improved through targeted elevation, improved stormwater management, and shoreline stabilization.',
     imageUrl: import.meta.env.BASE_URL + 'general-img-landscape.png',
     isSideBySideSplit: true,
     beforeLabel: "Current Vulnerabilities",
     afterLabel: "Resilient Adaptation",
-    beforeDesc: "Recurrent king-tide flooding, overwhelmed gravity-fed storm drains, low seawalls, and heat-island effects from extensive impervious pavement.",
-    afterDesc: "Bioswales, elevated shop entrances, permeable pavers, reinforced living shorelines, and advanced pump stations with backflow prevention.",
+    beforeDesc: "Frequent flooding in low-lying areas, limited drainage during high tide, minimal shoreline protection under surge conditions, and extensive paved surfaces contributing to runoff.",
+    afterDesc: "Reduced flooding in key areas due to elevation changes, improved drainage through pumped conveyance and added storage, increased infiltration, and more stable shoreline conditions.",
     vulnerability: (
       <>
-        <p className="text-slate-600 mb-6 leading-relaxed">
-          St. Armands Circle is highly exposed to sea-level rise and storm surge. With average elevations
-          only a few feet above sea level, seasonal king tides regularly inundate streets<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>,
-          disrupting businesses and obstructing evacuation routes.
+        <p className="mb-6">
+          St. Armands Circle is located on St. Armands Key, a barrier island positioned between Sarasota Bay and the Gulf. The site is directly exposed to tidal fluctuations and storm surge from both coastal and bay-side conditions.
         </p>
-        <p className="text-slate-600 leading-relaxed">
-          The district's existing gray infrastructure—concrete seawalls and aging gravity-fed storm drains—is increasingly
-          submerged by a rising water table, limiting its effectiveness when rainfall events coincide with high tides<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>.
+        <p className="mb-6">
+          Ground elevations across the site range from approximately 4 to 7 feet NAVD88, placing portions of the roadway network within the range of regular high-tide flooding<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>. These conditions result in periodic roadway overtopping, reduced site accessibility, and constrained evacuation routes.
+        </p>
+        <p className="">
+          The existing stormwater system relies on gravity to move water to adjacent tidal waters. During high tide or storm surge, elevated water levels can prevent discharge or cause backflow into the system. Elevated groundwater levels further limit the capacity of the ground to absorb water. When rainfall occurs during high tide, water accumulates on the surface and drains slowly. Seawalls provide partial protection from surge but do not address internal drainage constraints.
         </p>
       </>
     ),
     strategy: (
       <>
-        <p className="text-slate-600 mb-6 leading-relaxed">
-          The recommended approach pairs a <strong>Nature-Based Solutions (NBS)</strong> framework with targeted structural
-          elevations—designing with the water rather than against it<sup className="text-[10px] text-slate-400 ml-0.5">[3]</sup>.
+        <p className="mb-6">
+          The proposed approach focuses on reducing flood exposure and improving drainage performance under high water conditions.
         </p>
       </>
     ),
     strategyPoints: [
-      <>Deploying biofiltration and permeable surfaces to offset stormwater runoff<sup className="text-[10px] text-slate-400 ml-0.5">[4]</sup>.</>,
-      "Elevating critical roadways and commercial ground-floors above projected flood plains.",
-      "Transforming coastal edges into living shorelines.",
-      "Adding mechanical pump stations with backflow preventers."
+      <>Introduce permeable surfaces and landscaped stormwater features to reduce runoff and increase on-site absorption<sup className="text-[10px] text-slate-400 ml-0.5">[4]</sup>.</>,
+      "Elevate key roadway segments and building access points to maintain access during flood events.",
+      "Stabilize shoreline edges using vegetated systems to reduce erosion and wave impact.",
+      "Install pump stations with backflow controls to maintain drainage when gravity systems are ineffective."
     ],
     features: [
       { icon: Droplet, title: "Permeable Pavers", description: "Replacing asphalt in parking areas and walkways with permeable materials to allow stormwater to naturally infiltrate the water table.", position: { top: "80%", left: "62%" } },
@@ -63,38 +62,41 @@ export const locationsData = [
   },
   {
     id: 'everglades',
-    title: 'Everglades City Heritage Retreat',
+    title: 'Everglades City Adaptation',
     tabLabel: 'Everglades City',
     location: 'Collier County',
-    description: 'Adapting a historic Gulf coast community to severe storm surge and sea-level rise while protecting its Ten Thousand Islands heritage.',
+    description: 'Illustrates how a low-lying coastal community could be improved through targeted elevation, distributed water storage, and improved drainage under tidal and storm surge conditions.',
     imageUrl: import.meta.env.BASE_URL + 'general-img-landscape.png',
     isSideBySideSplit: false,
     beforeLabel: "Current Vulnerabilities",
     afterLabel: "Resilient Adaptation",
-    beforeDesc: "Low-elevation historic structures, failing septic systems, eroded natural buffers, and repeated inundation from Gulf storm surge.",
-    afterDesc: "Elevated heritage structures, restored mangrove fringes, resilient municipal wastewater systems, and amphibious dock infrastructure.",
+    beforeDesc: "Frequent and prolonged flooding, limited drainage capacity, minimal elevation differences, and widespread standing water following tidal and rainfall events.",
+    afterDesc: "Reduced flood exposure in elevated areas, improved water distribution through added storage, more effective retention within natural systems, and improved drainage in targeted locations.",
     vulnerability: (
       <>
-        <p className="text-slate-600 mb-6 leading-relaxed">
-          Everglades City sits at low elevation on the Gulf of Mexico and faces direct storm-surge exposure. Recent hurricane events have repeatedly submerged large portions of the community<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>.
+        <p className="mb-6">
+          Everglades City is located along the edge of the Gulf of Mexico within the Ten Thousand Islands region. The area is characterized by very low elevations, limited topographic relief, and direct exposure to tidal influence and coastal surge.
         </p>
-        <p className="text-slate-600 leading-relaxed">
-          Legacy septic systems and low-elevation historic structures are poorly suited to a rising water table and intensifying storms, placing both the community's cultural heritage and the surrounding estuarine ecology at risk<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>.
+        <p className="mb-6">
+          Ground elevations across the developed areas generally range from approximately 2 to 5 feet NAVD88, placing much of the site within the range of regular tidal flooding and storm surge impacts<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>. Flooding often results in standing water across roadways and properties, with limited natural drainage due to minimal slope.
+        </p>
+        <p className="">
+          The existing drainage system is limited and relies on shallow conveyance and natural storage. High tide and surge conditions restrict outflow, while elevated groundwater reduces infiltration capacity. As a result, water remains on the surface for extended periods following rainfall and tidal events.
         </p>
       </>
     ),
     strategy: (
       <>
-        <p className="text-slate-600 mb-6 leading-relaxed">
-          A layered adaptation approach emphasizing heritage elevation and ecological restoration, integrating the built environment with the surrounding Everglades National Park ecosystem<sup className="text-[10px] text-slate-400 ml-0.5">[3]</sup>.
+        <p className="mb-6">
+          The proposed approach focuses on reducing flood exposure and improving water storage and drainage performance under high water conditions.
         </p>
       </>
     ),
     strategyPoints: [
-      "Elevating historic structures on driven pilings.",
-      "Restoring fringing mangrove forests to break wave energy.",
-      "Replacing failing septic systems with resilient municipal wastewater tech.",
-      "Adapting docks and waterfronts for variable water levels."
+      "Elevate critical structures and roadway segments to reduce direct flood exposure.",
+      "Introduce distributed storage areas and landscaped retention features to hold and slow stormwater.",
+      "Preserve and expand natural systems, including mangroves, to improve water retention and reduce surge impact.",
+      "Install localized pump systems where needed to assist drainage during high tide conditions."
     ],
     features: [
       { icon: Home, title: "Elevated Heritage", description: "Carefully raising historic wooden structures above base flood elevation while preserving architectural integrity.", position: { top: "30%", left: "60%" } },
@@ -118,38 +120,41 @@ export const locationsData = [
   },
   {
     id: 'fort-myers',
-    title: 'Fort Myers Beach Riverfront',
+    title: 'Fort Myers Beach Adaptation',
     tabLabel: 'Fort Myers Beach',
     location: 'Lee County',
-    description: 'Rebuilding the Estero Island back-bay ecosystem and commercial waterfront for dynamic flood resilience and post-storm economic recovery.',
+    description: 'Illustrates how a developed barrier island corridor could be improved through elevation, shoreline stabilization, and enhanced stormwater management under storm surge and coastal flooding conditions.',
     imageUrl: import.meta.env.BASE_URL + 'general-img-landscape.png',
     isSideBySideSplit: false,
     beforeLabel: "Current Vulnerabilities",
     afterLabel: "Resilient Adaptation",
-    beforeDesc: "Catastrophic storm-surge damage to ground-level commercial space, collapsed rigid bulkheads, and deep scour around building foundations.",
-    afterDesc: "Breakaway ground floors, elevated boardwalk corridors, terraced living shorelines, and hardened utility micro-grids.",
+    beforeDesc: "Frequent coastal flooding, limited drainage during high tide, shoreline erosion, and constrained access along the primary roadway.",
+    afterDesc: "Reduced flooding along elevated routes, improved shoreline stability, increased stormwater storage, and more reliable drainage through pumped systems and backflow prevention.",
     vulnerability: (
       <>
-        <p className="text-slate-600 mb-6 leading-relaxed">
-          Fort Myers Beach's bayside commercial corridor sustained catastrophic damage during Hurricane Ian, with storm surge destroying ground-level structures and critical infrastructure<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>.
+        <p className="mb-6">
+          Fort Myers Beach is located on Estero Island along the Gulf of Mexico. The site is a narrow barrier island with direct exposure to coastal storm surge, wave action, and tidal flooding.
         </p>
-        <p className="text-slate-600 leading-relaxed">
-          Aging vertical bulkheads failed under extreme pressure, and the absence of a natural buffer allowed surge to scour foundations and erode long sections of the coastal edge<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>.
+        <p className="mb-6">
+          Ground elevations across much of the developed area generally range from approximately 3 to 6 feet NAVD88, placing roadways and structures within the range of storm surge and high-tide flooding events<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>. Flooding can result in roadway overtopping, property impacts, and disruption to access along the island's primary corridor.
+        </p>
+        <p className="">
+          The existing stormwater system relies on a combination of gravity drainage and limited mechanical systems. During surge events and high tide, discharge capacity is reduced, and backflow can occur. The narrow island geometry limits opportunities for storage and increases exposure to wave-driven flooding.
         </p>
       </>
     ),
     strategy: (
       <>
-        <p className="text-slate-600 mb-6 leading-relaxed">
-          Rebuild guidance favors a shift from purely gray infrastructure to green-gray hybrids—pairing hardened, elevated commercial structures with absorptive living shorelines to protect both the economy and the ecosystem<sup className="text-[10px] text-slate-400 ml-0.5">[3]</sup>.
+        <p className="mb-6">
+          The proposed approach focuses on reducing flood exposure, maintaining access, and improving shoreline and drainage performance.
         </p>
       </>
     ),
     strategyPoints: [
-      <>Implementing breakaway ground-floor enclosures<sup className="text-[10px] text-slate-400 ml-0.5">[4]</sup>.</>,
-      "Transitioning from concrete bulkheads to living shorelines with oyster reefs.",
-      "Connecting elevated boardwalks for continuous pedestrian access during floods.",
-      "Creating natural stormwater retention berms."
+      "Elevate key roadway segments and access points to maintain connectivity during flood events.",
+      "Improve shoreline protection using stabilized vegetated systems and reinforced edges to reduce erosion and wave impact.",
+      "Introduce permeable surfaces and localized storage features to reduce runoff and surface flooding.",
+      "Expand pump capacity and install backflow controls to maintain drainage during high water conditions."
     ],
     features: [
       { icon: Building, title: "Breakaway Floors", description: "Ground floors designed with breakaway walls that allow storm surge to pass through without compromising structural supports.", position: { top: "50%", left: "65%" } },
