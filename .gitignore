@@ -1,0 +1,13 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+.claude/
+
+# Scratch GIS source/intermediate data for scripts/genlayers.mjs (generated .ts modules are committed)
+tmp_*.json
+scripts/layers.out.json
