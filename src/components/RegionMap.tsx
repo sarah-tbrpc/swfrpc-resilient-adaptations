@@ -73,10 +73,13 @@ export function RegionMap({ activeId, onHover, onSelect, className = '' }: Regio
       </g>
       {/* Place labels */}
       <g className="pointer-events-none select-none" fontWeight={600}>
-        <text x={866} y={353} textAnchor="middle" onMouseEnter={() => setHoverWater('lake')} onMouseLeave={() => setHoverWater(null)} style={{ pointerEvents: 'auto' }} className={`${hoverWater === 'lake' ? 'fill-[#0f4751]' : 'fill-[#1f5b66]'} transition-colors cursor-pointer`} fontSize={21}>Lake Okeechobee</text>
+        <text x={866} y={340} textAnchor="middle" onMouseEnter={() => setHoverWater('lake')} onMouseLeave={() => setHoverWater(null)} style={{ pointerEvents: 'auto' }} className={`${hoverWater === 'lake' ? 'fill-[#0f4751]' : 'fill-[#1f5b66]'} transition-colors cursor-pointer`} fontSize={21} fontStyle="italic">Lake Okeechobee</text>
         <text transform="translate(672 466) rotate(-13)" textAnchor="middle" onMouseEnter={() => setHoverWater('river')} onMouseLeave={() => setHoverWater(null)} style={{ pointerEvents: 'auto' }} className={`${hoverWater === 'river' ? 'fill-[#1f5b66]' : 'fill-[#3f7e8e]'} transition-colors cursor-pointer`} fontSize={18} fontStyle="italic">Caloosahatchee River</text>
-        <text transform="translate(232 560) rotate(52)" textAnchor="middle" className="fill-[#5a93a8]" fontSize={23} fontStyle="italic" letterSpacing={1}>Florida&rsquo;s Gulf Coast</text>
-        <text x={322} y={266} textAnchor="middle" className="fill-[#c2823a]" fontSize={17} fontWeight={700} stroke="#ffffff" strokeWidth={3.5} strokeLinejoin="round" style={{ paintOrder: 'stroke' }}>I-75</text>
+        <text transform="translate(232 650)" textAnchor="middle" className="fill-[#5a93a8]" fontSize={23} fontStyle="italic" letterSpacing={1}>Florida&rsquo;s Gulf Coast</text>
+        <g transform="translate(258 240)">
+          <path d="M22,7 C23,5 26,4 29,5 C33,5 38,7 39,10 C39,13 37,14 38,17 C39,20 40,22 40,25 C40,30 37,34 33,37 C29,40 25,42 22,44 C19,42 15,40 11,37 C7,34 4,30 4,25 C4,22 5,20 6,17 C7,14 5,13 5,10 C6,7 11,5 15,5 C18,4 21,5 22,7 Z" fill="#ffffff" stroke="#c2823a" strokeWidth={2.5} strokeLinejoin="round" />
+          <text x={22} y={29} textAnchor="middle" className="fill-[#c2823a]" fontSize={16} fontWeight={800}>75</text>
+        </g>
       </g>
       {SITES.map((s) => {
         const active = s.id === activeId;

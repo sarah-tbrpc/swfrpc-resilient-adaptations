@@ -60,7 +60,7 @@ function BeforeAfterDescription({ beforeDesc, afterDesc }: { beforeDesc?: React.
   );
 }
 
-function SliderSection({ slider, hideDescription, compact }: { slider: SliderConfig; hideDescription?: boolean; compact?: boolean }) {
+const SliderSection: React.FC<{ slider: SliderConfig; hideDescription?: boolean; compact?: boolean }> = ({ slider, hideDescription, compact }) => {
   const [showOverlays, setShowOverlays] = useState(true);
   return (
     <section>
@@ -126,6 +126,15 @@ export default function App() {
   const activeLocation = locationsData.find(loc => loc.id === activeTab) || locationsData[0];
   const siteDetailRef = useRef<HTMLDivElement>(null);
   const disclaimerRef = useRef<HTMLParagraphElement>(null);
+
+  // Always open at the top of the page on load/restore instead of letting the
+  // browser restore a prior scroll position (which often landed mid–Moore Haven).
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -197,16 +206,16 @@ export default function App() {
               {regionalOverview.description}
             </p>
             <p className="mt-4 text-[22px] font-[370] text-[#026873] leading-[33px]">
-              Every study site is reimagined around nature-based design, from{' '}
+              Every study site is reimagined around nature-based design and{' '}
               <a
                 href="https://gsi.floridadep.gov/gsi-basics/what-is-gsi/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium underline decoration-[#009bba]/50 underline-offset-2 hover:text-[#009bba]"
               >
-                green stormwater infrastructure (GSI)
+                Green Stormwater Infrastructure (GSI)
               </a>
-              {' '}to restored dunes and living breakwaters, the common thread for resilient adaptation across the region.
+              , the common thread for resilient adaptation across the region.
             </p>
           </div>
 
@@ -228,7 +237,7 @@ export default function App() {
               {locationsData.map((loc) => {
                 const county = loc.location.split(',')[1]?.trim() || loc.location;
                 const cardImages = [
-                  loc.afterImage ?? loc.imageUrl,
+                  loc.afterImage,
                   ...((loc.additionalSliders ?? []).map((s) => s.afterImage)),
                 ].filter(Boolean);
                 return (
@@ -249,7 +258,7 @@ export default function App() {
                         <span className="text-xs font-semibold tracking-wide uppercase">{county}</span>
                       </div>
                       <h3 className="text-[20px] font-bold text-[#026873] mb-1 leading-tight">
-                        {loc.tabLabel}
+                        {loc.title}
                       </h3>
                       <p className="text-[16px] text-slate-600 leading-snug mb-2">
                         {loc.description}
@@ -366,8 +375,8 @@ export default function App() {
               const sliders = [
                 {
                   title: activeLocation.sliderTitle,
-                  beforeImage: activeLocation.beforeImage ?? activeLocation.imageUrl,
-                  afterImage: activeLocation.afterImage ?? activeLocation.imageUrl,
+                  beforeImage: activeLocation.beforeImage,
+                  afterImage: activeLocation.afterImage,
                   beforeLabel: activeLocation.beforeLabel,
                   afterLabel: activeLocation.afterLabel,
                   isSideBySideSplit: activeLocation.isSideBySideSplit,
@@ -381,7 +390,7 @@ export default function App() {
                   aspectRatioOverride: activeLocation.sliderAspectRatio,
                 },
                 ...(activeLocation.additionalSliders ?? []),
-              ];
+              ] as SliderConfig[];
               if (sliders.length > 1) {
                 return (
                   <>

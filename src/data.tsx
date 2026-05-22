@@ -4,12 +4,8 @@ import { Droplet, Leaf, Shield, Waves, TreePine, Droplets, Home, Wrench, Anchor,
 // SWFRPC Resilient Adaptations — four sites, ordered upstream → downstream along the
 // Caloosahatchee corridor (Moore Haven → LaBelle → Fort Myers), then Naples for the
 // gulf coastal perspective.
-//
-// imageUrl values currently point to the Nano Banana placeholder while UE renders are
-// in production. Replace per site with `/{county}-{site}.jpg` when finals are ready.
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
-const PLACEHOLDER_IMAGE = asset('before_and_after_visualization_Nano_Banana_2_79722.jpg');
 
 // Regional overview shown above the per-site detail.
 // Map image expected at /public/regional-overview-map.png — should depict:
@@ -30,21 +26,20 @@ export const locationsData = [
   {
     id: 'moore-haven',
     tabLabel: 'Moore Haven',
-    title: 'Moore Haven Caloosahatchee Adaptation',
+    title: 'Moore Haven Lakeside Adaptation',
     location: 'Moore Haven, Glades County',
     description: 'Helping a low-lying inland community on the Caloosahatchee River handle heavy rainfall and high river levels safely.',
-    imageUrl: PLACEHOLDER_IMAGE,
     beforeImage: asset('Moore Haven - Before.png'),
     afterImage: asset('Moore Haven - After.png'),
     isSideBySideSplit: false,
     beforeLabel: "Current Vulnerabilities",
     afterLabel: "Resilient Adaptation",
-    beforeDesc: "The riverfront is unprotected and downtown buildings are exposed. When high river levels and heavy rain hit at the same time, the area is susceptible to flooding.",
-    afterDesc: "A protected waterfront with natural tree buffers, new ponds to catch rainwater, and safely elevated public buildings.",
+    beforeDesc: "The waterfront is unprotected and downtown buildings are exposed. When high river levels and heavy rain hit at the same time, the area is susceptible to flooding.",
+    afterDesc: "A waterfront protected by a living shoreline, new interconnected ponds to catch rainwater, and safely elevated public buildings.",
     vulnerability: (
       <>
         <p className="text-slate-600 leading-relaxed">
-          Moore Haven sits at the western outlet of Lake Okeechobee, where the Caloosahatchee River begins. Its low-lying downtown floods easily when lake releases coincide with heavy rainfall.<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup> As a lakeside community, it is also exposed to hurricane winds, intense rainfall, and storm-driven lake water that can overwhelm local defenses.<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>
+          Moore Haven sits at the western outlet of Lake Okeechobee, where the Caloosahatchee River begins. Its low-lying downtown floods rapidly when lake releases overlap with heavy rainfall,<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup> while hurricane-force winds and intense storms frequently threaten to overwhelm local defenses.<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>
         </p>
         <figure className="mt-6 lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
           <img
@@ -66,9 +61,9 @@ export const locationsData = [
       </>
     ),
     strategyPoints: [
-      <><strong>Natural Shoreline Buffers:</strong> Planting native cypress trees and cabbage palms along the riverbank to slow down waves, stop erosion, and naturally absorb water.</>,
+      <><strong>Natural Shoreline Buffers:</strong> Regrading the edges to create wetland shelves with native cypress trees and other native flora along the canal to slow down waves, stop erosion, and naturally absorb water.</>,
       <><strong>Raising Key Buildings:</strong> Elevating critical public facilities and community infrastructure so they stay dry and functional during big floods.</>,
-      <><strong>Neighborhood Water Storage:</strong> Creating neighborhood ponds and green spaces that can soak up and hold heavy rainfall before it inundates downtown streets.</>,
+      <><strong>Neighborhood Water Storage:</strong> Creating interconnected ponds and green spaces that can soak up and hold heavy rainfall before it inundates downtown streets.</>,
       <><strong>Redesigning Waterfront Parks:</strong> Upgrading waterfront parks to handle fluctuating water levels safely, keeping them usable for the community.</>
     ],
     vulnerabilityFeatures: [
@@ -90,10 +85,9 @@ export const locationsData = [
   {
     id: 'labelle',
     tabLabel: 'LaBelle',
-    title: 'LaBelle Riverfront Heritage Adaptation',
+    title: 'LaBelle Riverfront Adaptation',
     location: 'LaBelle, Hendry County',
     description: 'Protecting a downstream Caloosahatchee community from compound flooding driven by upstream lock releases, local rainfall, and tidal backwater.',
-    imageUrl: PLACEHOLDER_IMAGE,
     beforeImage: asset('LaBelle Before.png'),
     afterImage: asset('LaBelle After.png'),
     baseImageryCredit: 'marinas.com',
@@ -105,7 +99,7 @@ export const locationsData = [
     vulnerability: (
       <>
         <p className="text-slate-600 leading-relaxed">
-          LaBelle sits on the Caloosahatchee River between the Ortona Lock (S-78) upstream and the Franklin Lock (S-79) downstream, putting the town directly in the path of water moving from Lake Okeechobee toward the coast<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>. As the seat of Hendry County and a working agricultural community known for ranching, citrus, and sugar, its small downtown, courthouse, and riverfront marinas sit at low elevations along the bank.
+          LaBelle sits on the Caloosahatchee River between the Ortona Lock (S-78) upstream and the Franklin Lock (S-79) downstream, putting the town directly in the path of water moving from Lake Okeechobee toward the coast<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>. As the seat of Hendry County and a working agricultural community known for ranching, citrus, and sugar, its small downtown, courthouse, and riverfront marinas sit at low elevations along the bank<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>.
         </p>
         <figure className="mt-6 lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
           <img
@@ -122,14 +116,14 @@ export const locationsData = [
     strategy: (
       <>
         <p className="text-slate-300 mb-6 leading-relaxed">
-          A working waterfront adaptation approach that stabilizes the riverbank, elevates the buildings the county depends on, and gives stormwater somewhere to go before it reaches the river:
+          A working waterfront adaptation approach that stabilizes the riverbank, elevates the buildings the county depends on, and gives stormwater somewhere to go before it reaches the river<sup className="text-[10px] text-slate-400 ml-0.5">[3]</sup>:
         </p>
       </>
     ),
     strategyPoints: [
-      <><strong>Living Shorelines:</strong> Native cypress and floodplain plantings along the Caloosahatchee to stabilize the bank, reduce erosion from passing flows, and absorb floodwater during high river events.</>,
-      <><strong>Elevated Riverwalk and Public Space:</strong> A continuous elevated boardwalk along the riverbank with shaded pavilions, providing public access and recreation that stays usable through high water.</>,
-      <><strong>Upland Stormwater Retention:</strong> Bioswales, rain gardens, and small retention areas in residential and commercial streetscapes to catch local rainfall before it compounds with what is coming down the river.</>
+      <><strong>Living Shorelines:</strong> Planting native grasses, cypress trees, and other vegetation along the Caloosahatchee to stabilize the bank, reduce erosion from passing flows, and buffer floodwater during high river events.</>,
+      <><strong>Elevated Riverwalk and Public Space:</strong> Building a continuous elevated boardwalk along the riverbank with shaded pavilions to provide public access and recreation that stays usable through high water.</>,
+      <><strong>Upland Stormwater Retention:</strong> Adding bioswales, rain gardens, and small retention areas in residential and commercial streetscapes to catch local rainfall before it compounds with what is coming down the river.</>
     ],
     // Placeholder positions — reposition for the new LaBelle imagery.
     vulnerabilityFeatures: [
@@ -141,19 +135,17 @@ export const locationsData = [
       { icon: TreePine, title: "Elevated Riverwalk & Riparian Buffer", description: "A continuous boardwalk lifts public access above flood elevation and remains usable as river levels rise and fall. Restored tree cover and native plantings along the bank filter runoff and provide habitat while reinforcing the shoreline.", position: { top: "64%", left: "71%" }, popupPosition: "bottom-left" }
     ],
     citations: [
-      { text: "Florida Department of Environmental Protection. Florida Adaptation Planning Guidebook.", url: "https://floridadep.gov/rcp/resilient-florida-program/documents/florida-adaptation-planning-guidebook" },
       { text: "South Florida Water Management District. Caloosahatchee River Watershed Protection Plan.", url: "https://www.sfwmd.gov/our-work/caloosahatchee-river" },
-      { text: "City of LaBelle Comprehensive Plan.", url: "https://www.citylabelle.com/" },
-      { text: "Hendry County Local Mitigation Strategy.", url: "https://www.hendryfla.net/" }
+      { text: "Hendry County Local Mitigation Strategy.", url: "https://www.hendryfla.net/" },
+      { text: "Florida Department of Environmental Protection. Florida Adaptation Planning Guidebook.", url: "https://floridadep.gov/rcp/resilient-florida-program/documents/florida-adaptation-planning-guidebook" }
     ]
   },
   {
     id: 'fort-myers-riverfront',
     tabLabel: 'Fort Myers',
-    title: 'Fort Myers Downtown Riverfront',
+    title: 'Fort Myers Downtown Adaptation',
     location: 'Fort Myers, Lee County',
     description: 'Reimagining downtown Fort Myers\' Caloosahatchee waterfront to protect the historic commercial district from severe storms and rising water levels.',
-    imageUrl: PLACEHOLDER_IMAGE,
     beforeImage: asset('Fort Myers Riverfront Before.png'),
     afterImage: asset('Fort Myers Riverfront After.png'),
     sliderTitle: "Caloosahatchee Riverfront",
@@ -164,11 +156,11 @@ export const locationsData = [
     beforeLabel: "Current Vulnerabilities",
     afterLabel: "Resilient Adaptation",
     beforeDesc: "From the Caloosahatchee waterfront to the inland streets, downtown Fort Myers is exposed to storm surge on the scale of Hurricane Ian, undermined seawalls, ground-floor flooding, and pavement that funnels runoff toward the river.",
-    afterDesc: "A hybrid green-gray approach reshapes the district. Living shorelines and elevated, hardened buildings line the water, while permeable streets, bioswales, and shaded plazas inland absorb stormwater and protect the historic core.",
+    afterDesc: "A hybrid green-gray approach reshapes the district. Living shorelines and elevated, hardened buildings line the water, while permeable streets, bioswales, rain gardens, and shaded plazas inland absorb stormwater and protect the historic core.",
     vulnerability: (
       <>
         <p className="text-slate-600 leading-relaxed">
-          Hurricane Ian's 5 to 7 foot storm surge inundated Centennial Park, the Edison-Ford waterfront, and the downtown business corridor<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>. The riverfront faces dual risk, coastal surge pushing inland and high water flowing down the Caloosahatchee<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>, while aging seawalls and rising seas leave ground-floor storefronts and low-lying streets exposed to recurring storm and "sunny-day" tidal flooding that threatens the historic commercial core<sup className="text-[10px] text-slate-400 ml-0.5">[3]</sup>.
+          Hurricane Ian's 5 to 7-foot storm surge inundated Centennial Park, the Edison Ford waterfront, and the downtown business corridor along the Caloosahatchee River in Fort Myers<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>. The riverfront faces dual risk — coastal flooding from storm surge pushing inland and elevated water levels flowing down the Caloosahatchee<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>. Aging seawalls and rising seas leave ground-floor storefronts and low-lying streets exposed to recurring storm and "sunny-day" tidal flooding that threatens the historic commercial core.
         </p>
         <figure className="mt-6 lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
           <img
@@ -185,7 +177,7 @@ export const locationsData = [
     strategy: (
       <>
         <p className="text-slate-300 mb-6 leading-relaxed">
-          A hybrid <strong>green-gray adaptation</strong> strategy focused on integrated shoreline terracing and elevated boardwalks that dissipate wave energy and provide critical flood storage<sup className="text-[10px] text-slate-400 ml-0.5">[4]</sup>:
+          A hybrid <strong>green-gray adaptation</strong> strategy focused on shoreline terracing to dissipate wave energy integrated with inland bioretention to provide critical flood conveyance and storage<sup className="text-[10px] text-slate-400 ml-0.5">[3]</sup>:
         </p>
       </>
     ),
@@ -196,11 +188,11 @@ export const locationsData = [
     ],
     vulnerabilityFeatures: [
       { icon: Waves, title: "Unprotected Seawall", description: "Aging vertical concrete seawalls offer minimal defense against severe storm surge, allowing high water to easily breach and inundate the park and downtown grid.", position: { top: "22%", left: "90%" } },
-      { icon: Droplets, title: "Flood-Prone Surfaces", description: "The open grass lawn absorbs more rain than hard pavement, but still offers little real stormwater storage. During intense rainfall or river surges the soil quickly saturates, leaving standing floodwater.", position: { top: "84%", left: "82%" }, popupPosition: "top-left" }
+      { icon: Droplets, title: "Flood-Prone Surfaces", description: "The open grass lawn absorbs more rain than hard pavement, but still offers little real stormwater storage. During intense rainfall or river surges the soil quickly saturates, leaving standing floodwater.", position: { top: "90%", left: "50%" }, popupPosition: "bottom-left" }
     ],
     features: [
       { icon: Waves, title: "Living Shorelines", description: "Along the riverfront, rigid seawalls give way to terraced living shorelines of native plantings, mangroves, and oyster reefs that absorb wave energy, slow surge, and stabilize the banks against erosion.", position: { top: "22%", left: "90%" } },
-      { icon: Leaf, title: "Resilient Landscape", description: "Permeable surfaces, bioswales, and restored shoreline capture stormwater where it falls, while adjacent buildings are elevated and built to resilient standards.", position: { top: "84%", left: "82%" }, popupPosition: "bottom-left" }
+      { icon: Leaf, title: "Resilient Landscape", description: "Permeable surfaces, bioswales, and restored shoreline capture stormwater where it falls, while adjacent buildings are elevated and built to resilient standards.", position: { top: "90%", left: "50%" }, popupPosition: "bottom-left" }
     ],
     additionalSliders: [
       {
@@ -216,17 +208,16 @@ export const locationsData = [
         hideBaseImagery: true,
         aspectRatioOverride: 0.964,
         features: [
-          { icon: Leaf, title: "Permeable\nBioswale", description: "Permeable paving and planted bioswales along the streetscape capture and filter stormwater, reducing runoff and easing localized flooding in the commercial corridor.", position: { top: "91%", left: "18%" }, popupPosition: "bottom-right" }
+          { icon: Leaf, title: "Permeable\nBioswale", description: "Permeable paving and planted bioswales along the streetscape capture and filter stormwater, reducing runoff and easing localized flooding in the commercial corridor.", position: { top: "88%", left: "39%" }, popupPosition: "bottom-right" }
         ],
         vulnerabilityFeatures: [
-          { icon: Droplet, title: "Impervious Streetscape", description: "Continuous concrete and asphalt sheds stormwater straight toward the river with no infiltration, ponding in the commercial corridor during heavy rain.", position: { top: "91%", left: "18%" }, popupPosition: "bottom-right" }
+          { icon: Droplet, title: "Impervious Streetscape", description: "Continuous concrete and asphalt sheds stormwater straight toward the river with no infiltration, ponding in the commercial corridor during heavy rain.", position: { top: "88%", left: "39%" }, popupPosition: "bottom-right" }
         ]
       }
     ],
     citations: [
       { text: "USGS Hurricane Ian Storm Tide Sensor Data.", url: "https://water.usgs.gov/floods/events/2022/Ian/" },
       { text: "ResilientLee. Lee County Hurricane Ian Recovery and Resilience Plan.", url: "https://resilientlee.com/" },
-      { text: "City of Fort Myers Comprehensive Plan and Resiliency Update.", url: "https://www.cityftmyers.com/" },
       { text: "Florida Department of Environmental Protection. Florida Adaptation Planning Guidebook.", url: "https://floridadep.gov/rcp/resilient-florida-program/documents/florida-adaptation-planning-guidebook" }
     ]
   },
@@ -236,18 +227,17 @@ export const locationsData = [
     title: 'Naples Beachfront Adaptation',
     location: 'Naples, Collier County',
     description: 'Rebuilding Naples\' Gulf shoreline after Hurricane Ian with restored coastal defenses and resilient elevated reconstruction.',
-    imageUrl: PLACEHOLDER_IMAGE,
     beforeImage: asset('Naples - Before.png'),
     afterImage: asset('Naples - After.png'),
     isSideBySideSplit: false,
     beforeLabel: "Current Vulnerabilities",
     afterLabel: "Resilient Adaptation",
     beforeDesc: "Vacant lots left by Hurricane Ian, a narrow beach and degraded dune, and an exposed beachfront road to the Fifth Avenue South commercial district open to Gulf surge and wave runup.",
-    afterDesc: "A restored and planted dune, renourished beach, elevated resilient homes built above base flood elevation, and offshore living breakwaters that dissipate wave energy before it reaches the shore.",
+    afterDesc: "A restored and planted dune, renourished beach, and elevated resilient homes built above base flood elevation form the primary line of defense.",
     vulnerability: (
       <>
         <p className="text-slate-600 leading-relaxed">
-          Hurricane Ian's 6 to 7 foot storm surge struck Naples' Gulf-facing beachfront in September 2022, damaging or destroying numerous homes along Gulf Shore Boulevard<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>; many of the most exposed properties were demolished and remain vacant today<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>. An open shoreline with a narrow beach and thin dune system leaves these homes and the access roads behind them directly exposed to wave runup, surge, and erosion during major storms<sup className="text-[10px] text-slate-400 ml-0.5">[3]</sup>.
+          Hurricane Ian's 6 to 7 foot storm surge struck Naples' Gulf-facing beachfront in September 2022, damaging or destroying numerous homes along Gulf Shore Boulevard<sup className="text-[10px] text-slate-400 ml-0.5">[1]</sup>; many of the most exposed properties were demolished and remain vacant today<sup className="text-[10px] text-slate-400 ml-0.5">[2]</sup>. An open shoreline with a narrow beach and thin dune system leaves these homes and the access roads behind them directly exposed to wave runup, surge, and erosion during major storms.
         </p>
         <figure className="mt-6 lg:flex-1 lg:flex lg:flex-col lg:min-h-0">
           <img
@@ -264,28 +254,27 @@ export const locationsData = [
     strategy: (
       <>
         <p className="text-slate-300 mb-6 leading-relaxed">
-          A combined shoreline and built environment adaptation that rebuilds the dune as a first line of defense while raising and strengthening the homes behind it:
+          A combined shoreline and built environment adaptation that rebuilds the dune as a first line of defense while raising and strengthening the homes behind it<sup className="text-[10px] text-slate-400 ml-0.5">[3]</sup>:
         </p>
       </>
     ),
     strategyPoints: [
-      <><strong>Elevated Resilient Reconstruction:</strong> Rebuilding demolished properties on pilings above base flood elevation with breakaway lower floors, hurricane rated openings, and structural systems meeting current coastal high hazard standards.</>,
-      <><strong>Dune Restoration &amp; Living Breakwaters:</strong> Rebuilding and widening primary dunes with sand renourishment and native plantings of sea oats, railroad vine, and beach sunflower, paired with offshore living breakwaters that dissipate wave energy and absorb surge before it reaches the shore.</>
+      <><strong>Elevated Resilient Reconstruction:</strong> Rebuilding demolished properties on pilings above base flood elevation with breakaway lower floors, hurricane rated openings, and structural systems meeting current Coastal High Hazard Area (CHHA) standards.</>,
+      <><strong>Dune Restoration &amp; Beach Renourishment:</strong> Rebuilding and widening primary dunes with sand renourishment and native plantings of sea oats, railroad vine, and beach sunflower as the primary line of defense. The coastal jetties shown are conceptual only; whether they would effectively accrue sand here — and how many and how far apart — would need to be determined by a coastal engineer studying local wave and sediment movement.</>
     ],
     // Placeholder positions — reposition for the new Naples beachfront imagery.
     vulnerabilityFeatures: [
-      { icon: Building, title: "Demolished Properties", description: "Lots cleared after Hurricane Ian remain vacant, leaving gaps in the beachfront and removing the buffer that structures and landscaping once provided.", position: { top: "38%", left: "52%" }, popupPosition: "bottom-right" },
-      { icon: Shield, title: "Unprotected Shoreline", description: "The open Gulf shoreline has no offshore structures to break incoming waves, leaving the beach, dune, and properties behind it fully exposed to storm-driven wave energy and surge.", position: { top: "68%", left: "32%" }, popupPosition: "bottom-right" }
+      { icon: Building, title: "Demolished Properties", description: "Lots cleared after Hurricane Ian remain vacant, leaving gaps in the beachfront and removing the buffer that structures and landscaping once provided.", position: { top: "38%", left: "52%" }, popupPosition: "bottom-right", image: asset('naples-demo-property.png'), imageCredit: 'Naples Daily News' },
+      { icon: Shield, title: "Unprotected Shoreline", description: "The open Gulf shoreline has no offshore structures to break incoming waves, leaving the beach, dune, and properties behind it fully exposed to storm-driven wave energy and surge.", position: { top: "68%", left: "32%" }, popupPosition: "bottom-right", image: asset('surge-diagram.png'), imageCredit: 'Graphic created by APTIM' }
     ],
     features: [
-      { icon: Home, title: "Elevated Resilient Construction", description: "New homes rebuilt on pilings above base flood elevation, with breakaway lower floors, hurricane rated openings, and structural systems meeting current coastal high hazard standards.", position: { top: "38%", left: "52%" }, popupPosition: "bottom-right" },
-      { icon: Shield, title: "Restored Coastal Defenses", description: "A combined system of restored dunes with native plantings, a renourished beach, and offshore living breakwaters that work together to dissipate wave energy and absorb surge before it reaches the upland.", position: { top: "68%", left: "32%" }, popupPosition: "bottom-right", image: asset('scape_living-breakwaters_03.jpg'), imageCredit: 'Rebuild by Design / urbanNext' }
+      { icon: Home, title: "Elevated Resilient Construction", description: "New homes rebuilt on pilings above base flood elevation, with breakaway lower floors, hurricane rated openings, green roofs that capture rainfall and reduce runoff, and structural systems meeting current Coastal High Hazard Area (CHHA) standards.", position: { top: "38%", left: "52%" }, popupPosition: "bottom-right", image: asset('last-house-standing.png'), imageCredit: 'Nudura — Last House Standing' },
+      { icon: Shield, title: "Restored Coastal Defenses", description: "Restored dunes with native plantings and a renourished beach form the primary defense, dissipating wave energy and absorbing surge before it reaches the upland. The coastal jetties shown are conceptual only — they can help accrue sand, but their placement and effectiveness would need to be confirmed by a coastal engineer based on local sand and water movement.", position: { top: "68%", left: "32%" }, popupPosition: "bottom-right", image: asset('naples-dune-plants.jpg'), imageCredit: 'Naples Botanical Garden' }
     ],
     citations: [
-      { text: "Florida Department of Environmental Protection. Florida Adaptation Planning Guidebook.", url: "https://floridadep.gov/rcp/resilient-florida-program/documents/florida-adaptation-planning-guidebook" },
-      { text: "City of Naples Stormwater Master Plan.", url: "https://www.naplesgov.com/" },
       { text: "NOAA Tides and Currents, Naples Bay (Station 8725110).", url: "https://tidesandcurrents.noaa.gov/stationhome.html?id=8725110" },
-      { text: "Collier County Coastal Resilience Plan.", url: "https://www.colliercountyfl.gov/government/operations/resiliency-and-sustainability" }
+      { text: "City of Naples Stormwater Master Plan.", url: "https://www.naplesgov.com/streetsstormwater/page/stormwater-master-plan-0" },
+      { text: "Florida Department of Environmental Protection. Florida Adaptation Planning Guidebook.", url: "https://floridadep.gov/rcp/resilient-florida-program/documents/florida-adaptation-planning-guidebook" }
     ]
   }
 ];

@@ -11,6 +11,7 @@ export interface FeatureAnnotation {
   image?: string;
   imageCredit?: string;
   popupPosition?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  imageContain?: boolean;
 }
 
 interface BeforeAfterSliderProps {
@@ -265,7 +266,7 @@ export function BeforeAfterSlider({
                 <img
                   src={activeFeature.image}
                   alt={activeFeature.title}
-                  className="w-full h-24 md:h-44 object-cover object-[center_72%] rounded-lg md:rounded-xl ring-1 ring-white/15"
+                  className={`w-full ${activeFeature.imageContain ? 'h-32 md:h-56 object-contain bg-black/20' : 'h-24 md:h-44 object-cover object-[center_72%]'} rounded-lg md:rounded-xl ring-1 ring-white/15`}
                   draggable={false}
                 />
                 {activeFeature.imageCredit && (
